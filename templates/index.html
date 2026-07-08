@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temperature Prediction</title>
+   
+    <title> Historical  Temperature  </title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
@@ -14,14 +15,18 @@
 
 <div class="container">
 
-    <h1>🌡️ Temperature Prediction System</h1>
+    <h1>🌡️  Historical Temperature System</h1>
 
     <p>
         Select City and Date.
         <br>
         Other fields are Optional.
     </p>
-
+      
+    <div class="note">
+    📌 <strong>Note:</strong> This application displays historical temperature data from <strong>2020–2024</strong> only.
+   </div>
+ 
     <form action="/predict" method="POST">
 
  
