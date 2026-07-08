@@ -1,0 +1,184 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌡️ Temperature Prediction System</h1>
+
+    <p>
+        Select City and Date.
+        <br>
+        Other fields are Optional.
+    </p>
+
+    <form action="/predict" method="POST">
+
+ 
+
+        <label>Select City *</label>
+
+        <select name="city" required>
+
+            <option value="">Select City</option>
+
+            {% for city in cities %}
+
+            <option value="{{ city }}">
+
+                {{ city }}
+
+            </option>
+
+            {% endfor %}
+
+        </select>
+
+
+        <label>Select Date *</label>
+
+        <input
+            type="date"
+            name="date"
+            required>
+
+
+        <hr style="margin:20px 0;">
+
+
+        <h3 style="text-align:center;">
+            Optional Weather Details
+        </h3>
+>
+
+        <label>Temperature Min (°C)</label>
+
+        <input
+            type="number"
+            step="0.1"
+            name="temperature_2m_min"
+            placeholder="Leave blank for CSV value">
+
+
+        <label>Apparent Temperature Max (°C)</label>
+
+        <input
+            type="number"
+            step="0.1"
+            name="apparent_temperature_max"
+            placeholder="Leave blank for CSV value">
+
+
+    
+
+        <label>Apparent Temperature Min (°C)</label>
+
+        <input
+            type="number"
+            step="0.1"
+            name="apparent_temperature_min"
+            placeholder="Leave blank for CSV value">
+
+
+        <label>Precipitation Sum</label>
+
+        <input
+            type="number"
+            step="0.1"
+            name="precipitation_sum"
+            placeholder="Leave blank for CSV value">
+
+        <label>Rain Sum</label>
+
+        <input
+            type="number"
+            step="0.1"
+            name="rain_sum"
+            placeholder="Leave blank for CSV value">
+
+
+        <label>Weather Code</label>
+
+        <input
+            type="number"
+            name="weather_code"
+            placeholder="Leave blank for CSV value">
+
+
+        <label>Wind Speed</label>
+
+        <input
+            type="number"
+            step="0.1"
+            name="wind_speed_10m_max"
+            placeholder="Leave blank for CSV value">
+
+
+        <label>Wind Gust</label>
+
+        <input
+            type="number"
+            step="0.1"
+            name="wind_gusts_10m_max"
+            placeholder="Leave blank for CSV value">
+
+
+        
+
+        <label>Wind Direction</label>
+
+        <input
+            type="number"
+            name="wind_direction_10m_dominant"
+            placeholder="Leave blank for CSV value">
+
+
+        <button type="submit">
+
+            Predict Temperature
+
+        </button>
+
+    </form>
+
+
+    {% if prediction_text %}
+
+    <div class="result">
+
+        <h2>
+
+            {{ prediction_text }}
+
+        </h2>
+
+    </div>
+
+    {% endif %}
+
+
+    <div class="footer">
+
+        <p>
+
+            Developed by <strong>Ramesh Godara</strong>
+
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
