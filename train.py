@@ -79,10 +79,3 @@ print("\nR2 Score :", score)
 joblib.dump(model, "model.pkl")
 
 print("\nModel Saved Successfully")
-
-
-
-
-
-
- 
