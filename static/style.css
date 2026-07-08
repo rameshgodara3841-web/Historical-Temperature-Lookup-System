@@ -137,3 +137,13 @@ button{
 }
 
 }
+.note{
+    margin:15px 0 20px;
+    padding:12px;
+    background:#fff8e1;
+    border-left:5px solid #f59e0b;
+    color:#92400e;
+    border-radius:8px;
+    font-size:14px;
+    line-height:1.5;
+}
